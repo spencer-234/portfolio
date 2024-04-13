@@ -50,17 +50,22 @@
         flex-direction: column;
         gap: 20px;
         width: 100%;
+        gap: 30px;
 
         li {
-          width: 150px;
-          padding: 5px;
+          @include styles.centerFlex;
+          width: 100%;
+          padding: 5px 50px;
+          transform: skew(20deg);
+          background-color: white;
+          border-radius: 5px;
+          box-shadow: -5px 8px 22px 0px rgba(209,209,209,1);
+          max-width: 450px;
 
           img {
             border-radius: 5px;
-            background-color: white;
-            width: 100%;
+            width: 50%;
             height: auto;
-            padding: 2px;
           }
         }
       }
