@@ -110,13 +110,11 @@
   }
 
   .image-container {
+    @include styles.centerFlex;
     width: 20%;
     max-width: 100px;
     position: absolute;
     top: 21.25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
     background: styles.$gradient;
     overflow: hidden;
