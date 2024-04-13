@@ -3,6 +3,7 @@
 .contact {
   @include styles.centerFlex;
   @include styles.sectionStyles;
+  position: relative;
 
     .contact-header {
       @include styles.headerStyles;
@@ -17,6 +18,8 @@
       flex-direction: column;
       gap: 20px;
       font-size: 2rem;
+      width: 100%;
+      align-self: flex-start;
 
       .form-section {
         display: flex;
@@ -30,7 +33,7 @@
         outline: none;
         border-radius: 5px;
         width: 100%;
-        max-width: 400px;
+        max-width: 500px;
         padding: 5px;
       }
 
@@ -42,7 +45,32 @@
       button {
         @include styles.styledButton;
         width: 150px;
-        align-self: center;
+      }
+    }
+
+    .sentMessage {
+      @include styles.centerFlex;
+      gap: 50px;
+      border-radius: 5px;
+      width: fit-content;
+      padding: 10px 20px;
+      white-space: nowrap;
+      font-size: 1.7rem;
+      background: black;
+      position: absolute;
+      right: -100%;
+      border: 1px solid styles.$main-blue;
+      z-index: 90;
+      animation: sentSlide 0.5s forwards;
+      
+      @keyframes sentSlide {
+        100% {
+          right: 0;
+        }
+      }
+
+      button {
+        @include styles.styledButton;
       }
     }
 }

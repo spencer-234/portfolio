@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 
 const Contact = () => {
   const form = useRef();
+
+  const [sent, setSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,13 +21,18 @@ const Contact = () => {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          setSent(true);
         },
         (error) => {
           console.log("FAILED...", error.text);
         }
       );
   };
+
+  const handleClose = (e) => {
+    e.preventDefault();
+    setSent(false);
+  }
 
   return (
     <section className="contact" id="contact">
@@ -36,18 +43,24 @@ const Contact = () => {
       <form ref={form} onSubmit={sendEmail}>
         <div className="form-section">
           <label>Name:</label>
-          <input type="text" name="user_name" />
+          <input type="text" name="user_name" required />
         </div>
         <div className="form-section">
           <label>Email:</label>
-          <input type="email" name="user_email" />
+          <input type="email" name="user_email" required />
         </div>
         <div className="form-section">
           <label>Message:</label>
-          <textarea name="message" />
+          <textarea name="message" required />
         </div>
         <button type="submit" data="Send"></button>
       </form>
+      {sent && (
+        <div className="sentMessage">
+          Message Sent!
+          <button onClick={(e) => handleClose(e)}>OK</button>
+        </div>
+      )}
     </section>
   );
 };
