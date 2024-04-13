@@ -52,18 +52,6 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className="scroll">
-        <div>
-          {devSkills.map((skill, i) => (
-            <span key={i}>{skill.name}</span>
-          ))}
-        </div>
-        <div>
-          {devSkills.map((skill, i) => (
-            <span key={i}>{skill.name}</span>
-          ))}
-        </div>
-      </div>
       <div className="scroll img">
         <div>
           {devSkills.map((skill, i) => (
