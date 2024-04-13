@@ -1,7 +1,6 @@
 @use "../../general_styles/styles" as styles;
 
 .about {
-  margin-top: 52.5px;
   @include styles.centerFlex;
   @include styles.sectionStyles;
 

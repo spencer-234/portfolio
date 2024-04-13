@@ -29,27 +29,25 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
-      <div className="contact-container">
-        <div className="contact-header">
-          <h2>Contact Me</h2>
-          <div className="line"></div>
-        </div>
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form-section">
-            <label>Name:</label>
-            <input type="text" name="user_name" />
-          </div>
-          <div className="form-section">
-            <label>Email:</label>
-            <input type="email" name="user_email" />
-          </div>
-          <div className="form-section">
-            <label>Message:</label>
-            <textarea name="message" />
-          </div>
-          <button type="submit" data="Send"></button>
-        </form>
+      <div className="contact-header">
+        <h2>Contact Me</h2>
+        <div className="line"></div>
       </div>
+      <form ref={form} onSubmit={sendEmail}>
+        <div className="form-section">
+          <label>Name:</label>
+          <input type="text" name="user_name" />
+        </div>
+        <div className="form-section">
+          <label>Email:</label>
+          <input type="email" name="user_email" />
+        </div>
+        <div className="form-section">
+          <label>Message:</label>
+          <textarea name="message" />
+        </div>
+        <button type="submit" data="Send"></button>
+      </form>
     </section>
   );
 };

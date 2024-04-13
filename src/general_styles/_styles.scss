@@ -46,6 +46,7 @@ $main-pink: rgb(255, 0, 211);
 }
 
 @mixin sectionStyles {
+  margin-top: 52.5px;
   padding: 50px 20px;
   flex-direction: column;
   width: 100%;

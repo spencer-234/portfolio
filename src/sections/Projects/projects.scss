@@ -2,13 +2,7 @@
 
 .projects {
   @include styles.centerFlex;
-  width: 100vw;
-  height: 70vh;
-  padding: 20px;
-
-  .projects-container {
-    max-width: 1500px;
-    width: 100%;
+  @include styles.sectionStyles;
 
     .projects-header {
       @include styles.headerStyles;
@@ -85,5 +79,4 @@
         }
       }
     }
-  }
 }

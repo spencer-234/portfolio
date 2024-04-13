@@ -41,36 +41,36 @@ const Projects = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setDesc(!desc);
-  }
- 
+  };
+
   return (
     <section className="projects" id="projects">
-      <div className="projects-container">
-        <div className="projects-header">
-          <h2>Projects</h2>
-          <div className="line"></div>
+      <div className="projects-header">
+        <h2>Projects</h2>
+        <div className="line"></div>
+      </div>
+      <div className="cards-container">
+        <div className="card">
+          <ArrowBackIosNewIcon
+            className="arrow right"
+            onClick={() => handleChange("right")}
+          />
+          <ArrowBackIosNewIcon
+            className="arrow left"
+            onClick={() => handleChange("left")}
+          />
+          <img src={devProjects[current].img} alt="project image" />
+          {desc && (
+            <div className="project-info">
+              <h3>{devProjects[current].name}</h3>
+              <p>{devProjects[current].desc}</p>
+            </div>
+          )}
         </div>
-        <div className="cards-container">
-          <div className="card">
-            <ArrowBackIosNewIcon
-              className="arrow right"
-              onClick={() => handleChange("right")}
-            />
-            <ArrowBackIosNewIcon
-              className="arrow left"
-              onClick={() => handleChange("left")}
-            />
-            <img src={devProjects[current].img} alt="project image" />
-            {desc && (
-              <div className="project-info">
-                <h3>{devProjects[current].name}</h3>
-                <p>{devProjects[current].desc}</p>
-              </div>
-            )}
-          </div>
-          <button onClick={(e) => handleClick(e)} data={desc ? "Close Description" : "Read Description"}>
-          </button>
-        </div>
+        <button
+          onClick={(e) => handleClick(e)}
+          data={desc ? "Close Description" : "Read Description"}
+        ></button>
       </div>
     </section>
   );

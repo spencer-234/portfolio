@@ -2,15 +2,7 @@
 
 .skills {
   @include styles.centerFlex;
-  width: 100vw;
-  height: 70vh;
-  padding: 20px;
-  overflow: hidden;
-
-  .skills-container {
-    max-width: 1500px;
-    width: 100%;
-  }
+  @include styles.sectionStyles;
 
   .skills-header {
     @include styles.headerStyles;
