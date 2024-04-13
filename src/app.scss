@@ -23,3 +23,10 @@ a, a:visited {
 ul {
     list-style-type: none;
 }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

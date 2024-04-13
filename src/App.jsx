@@ -28,7 +28,7 @@ const App = () => {
         <main>
           <Welcome setScrolled={setScrolled} />
           {scrolled && (
-            <div ref={pageRef}>
+            <div ref={pageRef} className="page">
               <About />
               <Projects />
               <Skills />

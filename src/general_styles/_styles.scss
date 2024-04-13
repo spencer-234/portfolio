@@ -45,6 +45,13 @@ $main-pink: rgb(255, 0, 211);
   justify-content: center;
 }
 
+@mixin sectionStyles {
+  padding: 50px 20px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1500px;
+}
+
 @mixin styledButton {
   padding: 10px 20px;
   border: none;
