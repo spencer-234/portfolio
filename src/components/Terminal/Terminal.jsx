@@ -1,12 +1,15 @@
 import "./terminal.scss";
+import MinimizeIcon from '@mui/icons-material/Minimize';
+import CropSquareIcon from '@mui/icons-material/CropSquare';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Terminal = () => {
   return (
     <div className="terminal">
       <div className="terminal-btns">
-        <div className="btn green"></div>
-        <div className="btn yellow"></div>
-        <div className="btn red"></div>
+        <MinimizeIcon className="btn"/>
+        <CropSquareIcon className="btn"/>
+        <CloseIcon className="btn"/>
       </div>
       <div className="terminal-box">
         <div className="terminal-text">

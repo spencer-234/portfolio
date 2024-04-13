@@ -1,43 +1,38 @@
+@use "../../general_styles/styles" as styles;
+
 .terminal {
+    @include styles.centerFlex;
+    flex-direction: column;
     max-width: 500px;
     border-radius: 5px;
-    border: 1px solid rgb(218, 218, 218);
+    background: styles.$gradient;
     overflow: hidden;
+    padding-bottom: 3px;
 
     .terminal-btns {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        background-color: rgb(218, 218, 218);
         width: 100%;
         height: 30px;
         gap: 10px;
         padding-right: 10px;
 
         .btn {
+            fill: black;
             width: 20px;
             height: 20px;
-            border-radius: 50%;
-            border: 1px solid black;
-
-            &.green {
-                background-color: green;
-            }
-            &.yellow {
-                background-color: yellow;
-            }
-            &.red {
-                background-color: red;
-            }
         }
     }
 
     .terminal-box {
-        width: 100%;
+        width: calc(100% - 6px);
         height: calc(100% - 30px);
         font-weight: 500;
         font-size: 1.2rem;
         padding: 5px;
+        border-radius: 5px;
+        background-color: black;
 
         .terminal-text {
             display: flex;
@@ -71,6 +66,7 @@
         }
 
         .about-txt {
+            padding-bottom: 50px;
             margin-top: 5px;
             visibility: hidden;
             animation: popIn forwards;
