@@ -15,6 +15,7 @@
     .cards-container {
         @include styles.centerFlex;
       width: 100%;
+      max-width: 1250px;
       flex-direction: column;
       gap: 20px;
 
