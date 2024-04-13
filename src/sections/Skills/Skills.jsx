@@ -17,15 +17,15 @@ const Skills = () => {
       img: css,
     },
     {
-      name: "JavaScript",
+      name: "JAVASCRIPT",
       img: js,
     },
     {
-      name: "NodeJs",
+      name: "NODEJS",
       img: node,
     },
     {
-      name: "React",
+      name: "REACT",
       img: react,
     },
     {
@@ -40,21 +40,39 @@ const Skills = () => {
         <h2>Skills</h2>
         <div className="line"></div>
       </div>
-      <div className="scroll-container">
-        <div className="scroll-element primary">
+      <div className="scroll">
+        <div>
           {devSkills.map((skill, i) => (
-            <div className="skill-element" key={i}>
-              <img src={skill.img} alt={skill.name} />
-              <span>{skill.name}</span>
-            </div>
+            <span key={i}>{skill.name}</span>
           ))}
         </div>
-        <div className="scroll-element secondary">
+        <div>
           {devSkills.map((skill, i) => (
-            <div className="skill-element" key={i}>
-              <img src={skill.img} alt={skill.name} />
-              <span>{skill.name}</span>
-            </div>
+            <span key={i}>{skill.name}</span>
+          ))}
+        </div>
+      </div>
+      <div className="scroll">
+        <div>
+          {devSkills.map((skill, i) => (
+            <span key={i}>{skill.name}</span>
+          ))}
+        </div>
+        <div>
+          {devSkills.map((skill, i) => (
+            <span key={i}>{skill.name}</span>
+          ))}
+        </div>
+      </div>
+      <div className="scroll img">
+        <div>
+          {devSkills.map((skill, i) => (
+            <img src={skill.img} alt="skill image" key={i}/>
+          ))}
+        </div>
+        <div>
+          {devSkills.map((skill, i) => (
+            <img src={skill.img} alt="skill image" key={i}/>
           ))}
         </div>
       </div>
