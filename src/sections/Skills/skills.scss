@@ -1,0 +1,85 @@
+@use "../../general_styles/styles" as styles;
+
+.skills {
+  @include styles.centerFlex;
+  width: 100vw;
+  height: 70vh;
+  padding: 20px;
+  overflow: hidden;
+
+  .skills-container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .skills-header {
+    @include styles.headerStyles;
+
+    h2 {
+      @include styles.styledText;
+    }
+  }
+
+  .scroll-container {
+    position: relative;
+    width: 100%;
+    min-width: 400px;
+    height: 300px;
+    overflow-x: hidden;
+
+    .scroll-element {
+      @include styles.centerFlex;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      left: 0%;
+      top: 0%;
+      gap: 10px;
+
+      .skill-element {
+        @include styles.centerFlex;
+        flex-direction: column;
+        gap: 20px;
+        height: fit-content;
+        width: 200px;
+        text-align: center;
+        font-size: 5vmin;
+
+        @media screen and (min-width: 480px) {
+            font-size: 2rem;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &.primary {
+        animation: primary 15s linear infinite;
+      }
+
+      &.secondary {
+        animation: secondary 15s linear infinite;
+      }
+    }
+
+    @keyframes primary {
+      from {
+        left: 0%;
+      }
+      to {
+        left: -105%;
+      }
+    }
+
+    @keyframes secondary {
+      from {
+        left: 105%;
+      }
+      to {
+        left: 0%;
+      }
+    }
+  }
+}

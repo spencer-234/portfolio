@@ -1,0 +1,25 @@
+:root {
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}

@@ -1,0 +1,89 @@
+@use "../../general_styles/styles" as styles;
+
+.about {
+  @include styles.centerFlex;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+
+  .about-main {
+    max-width: 1000px;
+    width: 100%;
+
+    .about-header {
+      @include styles.headerStyles;
+
+      h2 {
+        @include styles.styledText;
+      }
+    }
+
+    .about-container {
+      @include styles.centerFlex;
+      flex-direction: column;
+      width: 100%;
+      gap: 40px;
+
+      .terminal-container {
+        flex: 1;
+        height: 150px;
+      }
+
+      .education {
+        flex: 1;
+        @include styles.centerFlex;
+        flex-direction: column;
+
+        .education-header {
+          margin-bottom: 20px;
+          width: 100%;
+
+          h3 {
+            @include styles.styledText;
+            font-size: 2.5rem;
+            border-right: 1px solid transparent;
+            margin-bottom: -10px;
+          }
+
+          .line {
+            height: 2px;
+            background: styles.$gradient;
+          }
+        }
+
+        ul {
+          @include styles.centerFlex;
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+
+          li {
+            width: 150px;
+            padding: 5px;
+
+            img {
+              border-radius: 5px;
+              background-color: white;
+              width: 100%;
+              height: auto;
+              padding: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+    .about {
+
+        .about-main {
+
+            .about-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+    }
+}

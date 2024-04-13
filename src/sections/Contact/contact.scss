@@ -1,0 +1,56 @@
+@use "../../general_styles/styles" as styles;
+
+.contact {
+  @include styles.centerFlex;
+  width: 100vw;
+  height: 70vh;
+  padding: 20px;
+  flex-direction: column;
+
+  .contact-container {
+    max-width: 1000px;
+    width: 100%;
+
+    .contact-header {
+      @include styles.headerStyles;
+
+      h2 {
+        @include styles.styledText;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-size: 2rem;
+
+      .form-section {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      input,
+      textarea {
+        color: black;
+        outline: none;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 400px;
+        padding: 5px;
+      }
+
+      textarea {
+        resize: none;
+        height: 100px;
+      }
+
+      button {
+        @include styles.styledButton;
+        width: 150px;
+        align-self: center;
+      }
+    }
+  }
+}

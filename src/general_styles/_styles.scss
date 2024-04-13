@@ -1,0 +1,81 @@
+$gradient: linear-gradient(
+  60deg,
+  rgba(255, 0, 211, 1) 0%,
+  rgba(201, 105, 233, 1) 49%,
+  rgba(0, 215, 255, 1) 100%
+);
+
+$header-gradient: linear-gradient(
+  rgba(255, 0, 211, 1) 0%,
+  rgba(201, 105, 233, 1) 49%,
+  rgba(0, 215, 255, 1) 100%
+);
+
+$main-blue: rgb(0, 215, 255);
+
+$main-pink: rgb(255, 0, 211);
+
+// style groups using mixins
+
+@mixin styledText {
+  font-family: "Cedarville Cursive", cursive;
+  background: $gradient;
+  color: transparent;
+  background-clip: text;
+}
+
+@mixin headerStyles {
+  width: 100%;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: -10px;
+  }
+
+  .line {
+    height: 2px;
+    background: $gradient;
+  }
+}
+
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin styledButton {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  background: $gradient;
+  cursor: pointer;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    background-color: black;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  &::after {
+    content: attr(data);
+    background: $gradient;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5em;
+  }
+}
+
+$min-width: 250px;
+
+$min-height: 600px;

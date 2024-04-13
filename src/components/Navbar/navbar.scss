@@ -1,0 +1,153 @@
+@use "../../general_styles/styles" as styles;
+
+.container {
+  min-width: styles.$min-width;
+  width: 100vw;
+  height: 52.5px;
+  background: styles.$gradient;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 900;
+  font-size: 1.6rem;
+
+  .navbar {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+    position: relative;
+
+    .lg-menu {
+      display: none;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      animation: fade-in 1s forwards;
+      animation-delay: .5s;
+      opacity: 0;
+
+      .half {
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+
+        a:hover {
+          color: styles.$main-blue;
+        }
+
+        &.left {
+          a:hover {
+            color: styles.$main-pink;
+          }
+        }
+      }
+
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    .sm-menu {
+      cursor: pointer;
+
+      .icon {
+        font-size: 2.5rem;
+      }
+      
+      .menu-options {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 45px;
+        right: 0;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        padding: 0 5px 5px 5px;
+        gap: 5px;
+        animation: growDown 300ms forwards;
+        transform-origin: top center;
+
+        a:hover {
+          color: styles.$main-blue;
+        }
+      }
+
+      .menu-spin {
+        animation: spin 1s forwards;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+
+      @keyframes growDown {
+        0% {
+          transform: scaleY(0);
+        }
+        80% {
+          transform: scaleY(1.1);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+
+  .image-container {
+    width: 20%;
+    max-width: 100px;
+    position: absolute;
+    top: 21.25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: styles.$gradient;
+    overflow: hidden;
+    padding: 2px;
+
+    img {
+      width: 100%;
+      height: auto;
+      background-color: black;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .container {
+    .navbar {
+      padding: 0 20px;
+      justify-content: center;
+
+      .sm-menu {
+        display: none;
+      }
+
+      .lg-menu {
+        display: flex;
+      }
+    }
+
+    .image-container {
+      top: 10px;
+    }
+  }
+}
