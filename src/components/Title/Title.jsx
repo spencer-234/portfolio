@@ -1,7 +1,7 @@
 import "./title.scss";
 import { useContext } from "react";
-import { VisibilityContext } from "../../VisibilityContext.jsx";
-import devImage from "../../assets/avatars/avatar.png";
+import { VisibilityContext } from "../../context/VisibilityContext.jsx";
+import devImage from "/assets/avatars/avatar.png";
 
 const Title = () => {
 

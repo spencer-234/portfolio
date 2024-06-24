@@ -1,0 +1,17 @@
+.home {
+    position: relative;
+
+    .intro {
+        width: 100vw;
+
+        svg {
+            position: relative;
+    
+            .dev-image {
+                position: absolute;
+                right: 400px;
+            }
+        }
+    }
+
+}
