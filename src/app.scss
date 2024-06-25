@@ -15,11 +15,16 @@ body {
     overflow-x: hidden;
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
     color: white;
 }
 
 ul {
     list-style-type: none;
+}
+
+main {
+    width: 100vw;
 }

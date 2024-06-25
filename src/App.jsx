@@ -1,19 +1,18 @@
 import "./app.scss";
-import { 
-  createBrowserRouter,
-  RouterProvider
- } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Title from "./components/Title/Title";
+import Home from "./sections/Home/Home";
 
 const App = () => {
-  
-  const router = createBrowserRouter([
-    {
-      path: "/portfolio/",
-      element: <Home />
-    }
-  ])
-  return <RouterProvider router={router}/>
+  return (
+    <>
+      <Title />
+      <Navbar />
+      <main>
+        <Home />
+      </main>
+    </>
+  )
 };
 
 export default App;
