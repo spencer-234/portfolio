@@ -1,7 +1,7 @@
 @use "../../general_styles/styles" as styles;
 
 .nav-container {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 900;
     width: 100vw;
@@ -31,9 +31,9 @@
 
             .nav-links {
                 display: flex;
-                margin-left: 10vw;
+                margin-left: 5vw;
                 gap: 5vw;
-                font-size: 1.3rem;
+                font-size: 1.4rem;
 
                 @media screen and (min-width: styles.$sm) {
                     margin-left: auto;
