@@ -1,5 +1,6 @@
 import "./app.scss";
 import Navbar from "./components/Navbar/Navbar";
+import About from "./sections/About/About.jsx";
 import Title from "./components/Title/Title";
 import Home from "./sections/Home/Home";
 import { VisibilityContext } from "./context/VisibilityContext.jsx";
@@ -17,6 +18,7 @@ const App = () => {
           <Navbar />
           <main>
             <Home />
+            <About />
           </main>
         </>
       )}

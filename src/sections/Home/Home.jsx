@@ -5,7 +5,7 @@ import linkedIn from "/assets/icons/linkedIn.png";
 
 const Home = () => {
     return (
-        <section className="home">
+        <section className="home" id="home">
             <div className="glass">
                 <div className="home-container">
                     <div className="intro">
