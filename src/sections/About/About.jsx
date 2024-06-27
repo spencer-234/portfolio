@@ -4,12 +4,22 @@ import soundOn from "/assets/icons/speaker.svg";
 import muted from "/assets/icons/muted.svg";
 import audio from "/assets/audio/bg-music.mp3";
 import scanlines from "/assets/scanlines.png";
+import AboutHome from "../../components/AboutOptions/AboutHome/AboutHome";
+import AboutInfo from "../../components/AboutOptions/AboutInfo/AboutInfo";
+import AboutSkills from "../../components/AboutOptions/AboutSkills/AboutSkills";
 
 const About = () => {
 
     const sectionRef = useRef(null);
     const [start, setStart] = useState(false);
     const [volume, setVolume] = useState(false);
+    const [currentSection, setCurrentSection] = useState("home");
+    const options = {
+        home: <AboutHome setCurrentSection={setCurrentSection} />,
+        info: <AboutInfo setCurrentSection={setCurrentSection} />,
+        skills: <AboutSkills setCurrentSection={setCurrentSection} />,
+    };
+
 
     // Once full section is on page start the animations
     const startAnimation = (entries) => {
@@ -17,8 +27,6 @@ const About = () => {
 
         if (element.isIntersecting) {
             setStart(true);
-        } else {
-            setStart(false);
         }
     }
 
@@ -41,11 +49,12 @@ const About = () => {
             <div className={`about-container ${start && 'turn-on'}`}>
                 <img
                     src={volume ? soundOn : muted}
-                    alt="click-here-to-mute"
+                    alt={volume ? 'click-here-to-mute' : 'click-here-to-play-music'}
                     className="volume"
                     onClick={() => setVolume(prev => !prev)}
                 />
                 <img src={scanlines} alt="" className="scan" />
+                {options[currentSection]}
             </div>
             {/* div to tell if full section is on screen */}
             <div className="start-animation" ref={sectionRef}></div>

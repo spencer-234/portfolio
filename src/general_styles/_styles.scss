@@ -17,6 +17,24 @@ $main-blue: rgba(0, 215, 255, 1);
   justify-content: center;
 }
 
+@mixin back {
+  @include centerFlex();
+  gap: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: 3rem;
+  font-family: "VT323", monospace;
+  text-shadow: rgb(218, 218, 218) 1px 0 10px;
+  z-index: 20;
+
+  img {
+    width: 30px;
+    height: auto;
+  }
+}
+
 @mixin styledButton {
   padding: 10px 20px;
   border: none;

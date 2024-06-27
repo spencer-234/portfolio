@@ -1,0 +1,96 @@
+@use "../../../general_styles/styles" as styles;
+
+.aboutInfo {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    font-size: 2.1rem;
+    text-shadow: rgb(218, 218, 218) 1px 0 10px;
+    position: relative;
+
+    @media screen and (min-width: styles.$md) {
+        font-size: 2.5rem;
+    }
+
+    h2,
+    li,
+    .time {
+        font-family: "VT323", monospace;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .schedule {
+        font-family: "Cedarville Cursive", cursive;
+        font-weight: bold;
+        margin-left: -1000px;
+        animation: slideIn 2s forwards;
+    }
+
+    li {
+        width: 100%;
+        background-color: rgb(175, 74, 175);
+        height: fit-content;
+        overflow-y: hidden;
+        z-index: 7;
+        box-shadow: 0px 0px 10px 0px #353535 inset;
+        transition-duration: 200ms;
+        margin-left: -2000px;
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            background-color: rgb(9, 196, 243);
+            text-align: center;
+            padding: 10px 10px;
+            min-width: 100px;
+            width: 20%;
+            max-width: 200px;
+            z-index: 2;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #f1f1f1 inset, 0px 0px 15px 0px #555555 inset;
+        }
+
+        &:hover {
+            background-color: rgb(240, 243, 51);
+            color: black;
+        }
+
+        &.first {
+            animation: slideIn 1s forwards;
+            animation-delay: 2s;
+        }
+
+        &.second {
+            animation: slideIn 1s forwards;
+            animation-delay: 3s;
+        }
+
+        &.third {
+            animation: slideIn 1s forwards;
+            animation-delay: 4s;
+        }
+
+        &.fourth {
+            animation: slideIn 1s forwards;
+            animation-delay: 5s;
+            padding-bottom: 20px;
+
+            @media screen and (min-width: 587px) {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+@keyframes slideIn {
+    to {
+        margin-left: 0;
+    }
+}
