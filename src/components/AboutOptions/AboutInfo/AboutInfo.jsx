@@ -15,24 +15,17 @@ const AboutInfo = ({ setCurrentSection }) => {
                 </li>
                 <li
                     className="second"
-                    onClick={() => setCurrentSection("home")}
+                    onClick={() => setCurrentSection("education")}
                 >
                     <span className="time">9:00pm</span>{" "}
                     Education
                 </li>
                 <li
                     className="third"
-                    onClick={() => setCurrentSection("home")}
+                    onClick={() => setCurrentSection("credits")}
                 >
                     <span className="time">10:00pm</span>{" "}
-                    Hobbies
-                </li>
-                <li
-                    className="fourth"
-                    onClick={() => setCurrentSection("home")}
-                >
-                    <span className="time">11:00pm</span>{" "}
-                    That One Part Where Stuff Is Scrolled Too Fast
+                    Credits
                 </li>
             </ul>
         </div>

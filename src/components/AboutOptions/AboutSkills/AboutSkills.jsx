@@ -40,6 +40,7 @@ const AboutSkills = ({ setCurrentSection }) => {
                 <span>{skills[current].skill}</span>
                 <img src={skills[current].img} alt={`${skills[current].skill}-logo`} />
             </div>
+            <span>{`${current + 1}/${skills.length} `}</span>
         </div>
     )
 }

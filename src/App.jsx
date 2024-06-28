@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import About from "./sections/About/About.jsx";
 import Title from "./components/Title/Title";
 import Home from "./sections/Home/Home";
+import Projects from "./sections/Projects/Projects.jsx";
 import { VisibilityContext } from "./context/VisibilityContext.jsx";
 import { useContext } from "react";
 
@@ -19,6 +20,7 @@ const App = () => {
           <main>
             <Home />
             <About />
+            <Projects />
           </main>
         </>
       )}

@@ -1,0 +1,51 @@
+@use "../../../general_styles/styles" as styles;
+
+.about-education {
+    @include styles.centerFlex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h2,
+    p {
+        font-family: "VT323", monospace;
+        text-shadow: rgb(218, 218, 218) 1px 0 10px;
+    }
+
+    .back-arrow {
+        @include styles.back;
+    }
+
+    .education-container {
+        @include styles.centerFlex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            font-size: 2.5rem;
+            width: 100%;
+            text-align: center;
+
+            @media screen and (min-width: styles.$md) {
+                font-size: 3rem;
+            }
+        }
+
+        .education-images {
+            @include styles.centerFlex;
+            gap: 20px;
+
+            img {
+                max-width: 300px;
+                width: 40%;
+                height: auto;
+            }
+        }
+    }
+}

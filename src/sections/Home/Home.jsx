@@ -15,7 +15,7 @@ const Home = () => {
                             <a href="https://github.com/spencer-234" rel="noopener noreferrer">
                                 <img src={github} alt="github-account-link" />
                             </a>
-                            <a href="www.linkedin.com/in/spencer-evans-11155a28b" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/spencer-evans-11155a28b" rel="noopener noreferrer">
                                 <img src={linkedIn} alt="linked-in-account-link" />
                             </a>
                         </div>

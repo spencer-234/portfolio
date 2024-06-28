@@ -7,6 +7,8 @@ import scanlines from "/assets/scanlines.png";
 import AboutHome from "../../components/AboutOptions/AboutHome/AboutHome";
 import AboutInfo from "../../components/AboutOptions/AboutInfo/AboutInfo";
 import AboutSkills from "../../components/AboutOptions/AboutSkills/AboutSkills";
+import AboutEducation from "../../components/AboutOptions/AboutEducation/AboutEducation";
+import AboutCredits from "../../components/AboutOptions/AboutCredits/AboutCredits";
 
 const About = () => {
 
@@ -18,6 +20,8 @@ const About = () => {
         home: <AboutHome setCurrentSection={setCurrentSection} />,
         info: <AboutInfo setCurrentSection={setCurrentSection} />,
         skills: <AboutSkills setCurrentSection={setCurrentSection} />,
+        education: <AboutEducation setCurrentSection={setCurrentSection} />,
+        credits: <AboutCredits setCurrentSection={setCurrentSection} />
     };
 
 
@@ -45,7 +49,7 @@ const About = () => {
     }, [])
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className={`about-container ${start && 'turn-on'}`}>
                 <img
                     src={volume ? soundOn : muted}
