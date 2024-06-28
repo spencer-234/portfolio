@@ -49,7 +49,7 @@
         font-family: "Workbench", sans-serif;
         background: styles.$gradient;
         background-clip: text;
-        color: transparent;
+        color: rgba(255, 255, 255, 0);
       }
 
       .first {
@@ -88,6 +88,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -97,9 +98,11 @@
   0% {
     border-right-color: transparent;
   }
+
   50% {
     border-right-color: white;
   }
+
   100% {
     border-right-color: transparent;
   }
@@ -109,11 +112,13 @@
   0% {
     opacity: 1;
   }
+
   99% {
     opacity: 0.01;
     width: 100%;
     height: 100%;
   }
+
   100% {
     opacity: 0;
     width: 0;
