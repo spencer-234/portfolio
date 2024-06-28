@@ -14,7 +14,7 @@ const Contact = () => {
         if (sendingStatus.sent) {
             setTimeout(() => {
                 setSendingStatus((prev) => ({ ...prev, sent: false }))
-            }, 2000
+            }, 4000
             )
         }
 
