@@ -1,4 +1,5 @@
 import "./app.scss";
+import Contact from "./sections/Contact/Contact.jsx";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./sections/About/About.jsx";
 import Title from "./components/Title/Title";
@@ -21,6 +22,7 @@ const App = () => {
             <Home />
             <About />
             <Projects />
+            <Contact />
           </main>
         </>
       )}

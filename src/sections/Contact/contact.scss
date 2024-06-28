@@ -1,0 +1,77 @@
+@use "../../general_styles/styles" as styles;
+
+.contact {
+    @include styles.centerFlex;
+    width: 100vw;
+    height: 500px;
+    padding: 20px 10px;
+
+    .contact-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        flex-direction: column;
+
+        h2 {
+            font-size: 3rem;
+            background: styles.$gradient;
+            background-clip: text;
+            color: transparent;
+            font-family: "Cedarville Cursive", cursive;
+            margin-bottom: 30px;
+        }
+
+        form {
+            @include styles.centerFlex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+
+            input,
+            textarea {
+                padding: 5px 20px;
+                width: 100%;
+                max-width: 700px;
+                background-color: rgb(78, 78, 78);
+                color: white;
+                border-radius: 5px;
+                border: 1px solid rgb(188, 188, 188);
+                outline: none;
+
+                &::-webkit-input-placeholder {
+                    color: rgb(190, 190, 190);
+                }
+            }
+
+            textarea {
+                height: 100px;
+                resize: none;
+
+                &::-webkit-scrollbar {
+                    background: transparent;
+                    width: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgb(174, 174, 174);
+                }
+            }
+
+            button {
+                width: 80%;
+                max-width: 200px;
+                border-radius: 5px;
+                padding: 5px 10px;
+                background-color: rgb(0, 68, 152);
+                border: 1px solid white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(67, 141, 231);
+                }
+            }
+        }
+    }
+}
