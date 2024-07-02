@@ -13,9 +13,9 @@ const AboutEducation = ({ setCurrentSection }) => {
             <h2>Education</h2>
             <div className="education-container">
                 <p>
-                    After acheiving two associate&#39;s degrees
+                    After achieving two associate&#39;s degrees
                     from Germanna Community College, I decided
-                    to pursue web development in my studies at Virinia Commonwealth University. On my own time,
+                    to pursue web development in my studies at Virginia Commonwealth University. On my own time,
                     I continue to learn from those around me and wish to bring my skills
                     to you and provide my work!
                 </p>
