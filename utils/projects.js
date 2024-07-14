@@ -2,8 +2,15 @@ import newfilm from "/assets/project-images/newfilm.png";
 import youtube from "/assets/project-images/youtube_clone.jpg";
 import promptArt from "/assets/project-images/prompt-art.png";
 import weatherApp from "/assets/project-images/weather-app.jpg";
+import perspicacity from "/assets/project-images/perspicacity.png";
 
 export const projects = [
+    {
+        name: "Perspicacity GovCon",
+        img: perspicacity,
+        desc: "This is a contract position where I made the homepage for a business with plans on completing the full web app in time. At the moment, I have completed he homepage, login page, sign up page, and functional authentication. This is made with Next.js, typescript, and mongodb.",
+        link: "https://perspicacity.vercel.app/",
+    },
     {
         name: "NewFilm",
         img: newfilm,
