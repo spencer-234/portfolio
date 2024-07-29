@@ -1,56 +1,65 @@
 @use "../../general_styles/styles" as styles;
 
 .nav-container {
-    position: sticky;
+    width: 100vw;
+    @include styles.centerFlex;
+    position: fixed;
     top: 0;
     z-index: 900;
-    width: 100vw;
-    background: styles.$gradient;
-    height: 50px;
+    background-image: linear-gradient(to bottom, black 0%, transparent 100%);
 
     nav {
-        @include styles.centerFlex;
-        width: 100%;
-        height: 48px;
-        background-color: rgb(22, 22, 22);
-        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        height: 50px;
+        padding: 5px 10px;
+        justify-content: space-between;
+        max-width: styles.$max-width;
 
-        .nav-items {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 0 10px;
-            max-width: 1200px;
+        h1 {
+            font-family: "Playwrite AT", cursive;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 16px;
+            background-image: styles.$gradient;
+            background-clip: text;
+            color: transparent;
+        }
 
-            img {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-            }
+        img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
 
-            .nav-links {
-                display: flex;
-                margin-left: 5vw;
-                gap: 5vw;
-                font-size: 1.4rem;
+        .menu-open {
+            animation: openMenu 500ms forwards;
+        }
 
-                @media screen and (min-width: styles.$sm) {
-                    margin-left: auto;
-                    gap: 40px;
-                    font-size: 1.6rem;
-                }
+        .menu-close {
+            animation: closeMenu 500ms forwards;
+        }
+    }
 
-                a {
-                    white-space: nowrap;
-                    transition-duration: 350ms;
-                    font-weight: 500;
+    @keyframes openMenu {
+        from {
+            rotate: (0deg);
+        }
 
-                    &:hover {
-                        color: styles.$main-blue;
-                    }
-                }
-            }
+        to {
+            rotate: (180deg);
+        }
+    }
+
+    @keyframes closeMenu {
+        from {
+            rotate: (180deg);
+        }
+
+        to {
+            rotate: (0deg);
         }
     }
 }

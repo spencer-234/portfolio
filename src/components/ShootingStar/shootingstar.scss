@@ -1,0 +1,20 @@
+#star {
+    rotate: -40deg;
+    stroke-dasharray: 312;
+    animation: animateSvg 800ms forwards;
+    position: absolute;
+}
+
+@keyframes animateSvg {
+    0% {
+        stroke-dashoffset: -312;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 312;
+    }
+}

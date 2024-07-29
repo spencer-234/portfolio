@@ -3,11 +3,13 @@ $gradient: linear-gradient(60deg,
     rgba(201, 105, 233, 1) 49%,
     rgba(0, 215, 255, 1) 100%);
 
-$header-gradient: linear-gradient(rgba(255, 0, 211, 1) 0%,
+$header-gradient: linear-gradient(#ff00d3 0%,
     rgba(201, 105, 233, 1) 49%,
-    rgba(0, 215, 255, 1) 100%);
+    #00d7ff 100%);
 
 $main-blue: rgba(0, 215, 255, 1);
+
+$max-width: 1500px;
 
 // style groups using mixins
 
@@ -15,55 +17,6 @@ $main-blue: rgba(0, 215, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@mixin back {
-  @include centerFlex();
-  gap: 4px;
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  font-size: 3rem;
-  font-family: "VT323", monospace;
-  text-shadow: rgb(218, 218, 218) 1px 0 10px;
-  z-index: 20;
-
-  img {
-    width: 30px;
-    height: auto;
-  }
-}
-
-@mixin styledButton {
-  padding: 10px 20px;
-  border: none;
-  outline: none;
-  position: relative;
-  border-radius: 5px;
-  background: $gradient;
-  cursor: pointer;
-  z-index: 1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-    background-color: black;
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  &::after {
-    content: attr(data);
-    background: $gradient;
-    background-clip: text;
-    color: transparent;
-    font-size: 1.5em;
-  }
 }
 
 // responsive breakpoints
