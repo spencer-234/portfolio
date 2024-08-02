@@ -1,10 +1,11 @@
 import "./home.scss";
 import github from "/assets/icons/github.png";
 import linkedIn from "/assets/icons/linkedIn.png";
-import moon from "/assets/planets/moon.png";
-import saturn from "/assets/planets/saturn.png";
-import mars from "/assets/planets/mars.png";
 import ShootingStar from "../../components/ShootingStar/ShootingStar";
+import stars from "/assets/stars.png";
+import moon from "/assets/moon.png";
+import island from "/assets/island.png";
+import waves from "/assets/waves.png";
 import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
     const [positionY, setPositionY] = useState(0);
     const containerRef = useRef(null);
 
+    // interval to calculate page width and height to make sure shooting stars appear at each screen size
     useEffect(() => {
         const interval = setInterval(() => {
             let width = containerRef.current.offsetWidth;
@@ -22,30 +24,35 @@ const Home = () => {
             setPositionY(Math.floor(Math.random() * height));
             setShowStar(true);
             setTimeout(() => setShowStar(false), 800);
-        }, 3000)
+        }, 3000);
 
         return () => clearInterval(interval);
     }, [])
 
     return (
         <section className="home" id="home" ref={containerRef}>
-            <img src={moon} alt="image-of-moon" className="moon" />
-            <img src={saturn} alt="image-of-saturn" className="saturn" />
-            <img src={mars} alt="image-of-mars" className="mars" />
             {showStar && positionX && <ShootingStar x={positionX} y={positionY} />}
-            <p>
-                <span>Hi my name is</span>
-                <span>Spencer Evans</span>
-                <span>I'm a Web Developer</span>
-                <div className="profile-links">
-                    <a href="https://github.com/spencer-234" rel="noopener roferrer">
-                        <img src={github} alt="link-to-my-github-account" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/spencer-evans-11155a28b/" rel="noopener roferrer">
-                        <img src={linkedIn} alt="link-to-my-github-account" />
-                    </a>
-                </div>
-            </p>
+            <img src={moon} alt="image-of-the-moon" className="moon" />
+            <img src={island} alt="image-of-an-island-with-a-palm-tree" className="island" />
+            <img src="" alt="" />
+            <div className="stars">
+                <img src={stars} alt="backdrop-of-stars-moving-slowly" />
+                <img src={stars} />
+            </div>
+            <div className="waves">
+                <img src={waves} alt="image-of-waves-moving-slowly" />
+                <img src={waves} />
+            </div>
+            <div className="intro">
+                <h2>Spencer Evans</h2>
+                <span>Web Developer</span>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact Me</a>
+                </nav>
+            </div>
         </section>
     )
 }
