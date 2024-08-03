@@ -1,0 +1,118 @@
+@use "../../general_styles/styles" as styles;
+
+.about {
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #00055B;
+    position: relative;
+    padding: 15vh 10vw;
+    display: flex;
+    justify-content: center;
+
+    &.light-sea {
+        background-image: url("/assets/bg-sea.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media screen and (min-width: styles.$sm) {
+            background-position: 0% 0%;
+        }
+    }
+
+    .flashlight {
+        min-width: 100px;
+        width: 20vw;
+        max-width: 200px;
+        height: auto;
+        position: absolute;
+        top: 5vh;
+        right: 10vw;
+        rotate: 190deg;
+        animation: flashlightDrop 1.5s forwards;
+        z-index: 21;
+        opacity: 0.6;
+
+        &.float {
+            rotate: 150deg;
+            animation: float 5s infinite;
+            opacity: 1;
+        }
+    }
+
+    .about-content {
+        max-width: styles.$max-width;
+        opacity: 0;
+        transform: scale(0.3);
+
+        &.show-content {
+            animation: show 500ms forwards;
+        }
+
+        h2 {
+            font-size: 2rem;
+            @include styles.headerFont;
+            margin-bottom: 30px;
+            color: rgb(175, 175, 175);
+            opacity: 0.6;
+
+            &.light-on {
+                text-shadow: rgb(220, 220, 220) 1px 0 7px;
+                color: white;
+                opacity: 1;
+            }
+        }
+
+        p {
+            opacity: 0.6;
+            font-size: 1.5rem;
+            color: rgb(175, 175, 175);
+
+            &.light-on {
+                text-shadow: rgb(220, 220, 220) 1px 0 10px;
+                color: white;
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flashlightDrop {
+    from {
+        top: -50vh;
+        rotate: 190deg;
+    }
+
+    to {
+        top: 5vh;
+        rotate: 150deg;
+    }
+}
+
+@keyframes float {
+    0% {
+        top: 5vh;
+    }
+
+    50% {
+        top: 6vh;
+    }
+
+    100% {
+        top: 5vh;
+    }
+}

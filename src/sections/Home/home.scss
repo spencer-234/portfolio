@@ -39,7 +39,7 @@
     .island {
         position: absolute;
         bottom: -30px;
-        width: 80%;
+        width: 40%;
         height: auto;
         min-width: 300px;
         max-width: 850px;
@@ -70,16 +70,14 @@
         }
 
         h2 {
+            @include styles.headerFont;
             margin-top: -20vh;
             font-size: 3rem;
-            font-family: "Rock Salt", cursive;
-            font-style: normal;
         }
 
         span {
+            @include styles.headerFont;
             font-size: 1.4rem;
-            font-family: "Rock Salt", cursive;
-            font-style: normal;
         }
 
         nav {
@@ -101,10 +99,10 @@
             }
 
             a {
-                font-family: "Rock Salt", cursive;
-                font-style: normal;
+                @include styles.headerFont;
                 transition-duration: 200ms;
                 white-space: nowrap;
+                z-index: 2;
 
                 &:hover {
                     color: rgb(224, 133, 249);

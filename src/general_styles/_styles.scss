@@ -9,7 +9,7 @@ $header-gradient: linear-gradient(#ff00d3 0%,
 
 $main-blue: rgba(0, 215, 255, 1);
 
-$max-width: 1500px;
+$max-width: 1200px;
 
 // style groups using mixins
 
@@ -17,6 +17,11 @@ $max-width: 1500px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin headerFont {
+  font-family: "Rock Salt", cursive;
+  font-style: normal;
 }
 
 // responsive breakpoints
