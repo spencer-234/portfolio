@@ -1,0 +1,162 @@
+@use "../../general_styles/styles" as styles;
+
+.projects {
+    @include styles.centerFlex;
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, #00055B 0%, #00011c 90%);
+    overflow: hidden;
+    padding: 15vh 10vw;
+
+    .projects-content {
+        display: flex;
+        flex-direction: column;
+        max-width: styles.$max-width;
+        width: 100%;
+        padding-top: 20px;
+        opacity: 0;
+
+        &.show-content {
+            animation: show 500ms forwards;
+        }
+
+        h2 {
+            font-size: 2rem;
+            @include styles.headerFont;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            text-shadow: rgb(220, 220, 220) 1px 0 7px;
+            color: white;
+        }
+
+        .project-info {
+            @include styles.centerFlex;
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+            text-shadow: rgb(220, 220, 220) 1px 0 7px;
+
+            .project-options {
+                display: flex;
+                margin: 10px 0;
+                font-size: 1.5rem;
+                width: 100%;
+                max-width: 600px;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            .img-container {
+                overflow: hidden;
+                position: relative;
+                border-radius: 20px;
+                border: 2px solid white;
+                -webkit-box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+                -moz-box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+                box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+
+                img {
+                    width: 100%;
+                    max-width: 800px;
+                    height: auto;
+                }
+
+                p {
+                    position: absolute;
+                    text-align: center;
+                    padding: 20px;
+                    overflow-y: scroll;
+                    font-size: 1.7rem;
+                    text-shadow: none;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0);
+
+                    &::-webkit-scrollbar {
+                        background-color: transparent;
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: white;
+                        border-radius: 100px;
+                    }
+                }
+            }
+
+            .buttons {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 2rem;
+
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .line {
+        @include styles.centerFlex;
+        flex-direction: column;
+        position: absolute;
+        top: -500px;
+        opacity: 0;
+
+        div {
+            width: 2px;
+            background-image: linear-gradient(to bottom, transparent 10%, white 100%);
+            height: 10vh;
+        }
+
+        img {
+            width: 40px;
+            height: auto;
+
+            @media screen and (min-width: styles.$lg) {
+                width: 60px;
+            }
+        }
+
+        &.show-skills {
+            animation: extend 1s forwards;
+        }
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes extend {
+    from {
+        top: -50px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}

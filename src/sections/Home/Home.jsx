@@ -1,6 +1,4 @@
 import "./home.scss";
-import github from "/assets/icons/github.png";
-import linkedIn from "/assets/icons/linkedIn.png";
 import ShootingStar from "../../components/ShootingStar/ShootingStar";
 import stars from "/assets/stars.png";
 import moon from "/assets/moon.png";
@@ -49,7 +47,6 @@ const Home = () => {
                 <nav>
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
                     <a href="#contact">Contact Me</a>
                 </nav>
             </div>

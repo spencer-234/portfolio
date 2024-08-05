@@ -1,33 +1,28 @@
 @use "../../general_styles/styles" as styles;
 
 .about {
+    @include styles.centerFlex;
     width: 100vw;
-    height: 80vh;
+    min-height: 100vh;
     overflow: hidden;
     background-color: #00055B;
     position: relative;
     padding: 15vh 10vw;
-    display: flex;
-    justify-content: center;
 
     &.light-sea {
-        background-image: url("/assets/bg-sea.png");
+        background-image: url("/assets/bg-light.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        @media screen and (min-width: styles.$sm) {
-            background-position: 0% 0%;
-        }
     }
 
     .flashlight {
         min-width: 100px;
         width: 20vw;
-        max-width: 200px;
+        max-width: 150px;
         height: auto;
         position: absolute;
-        top: 5vh;
+        top: 1.5vh;
         right: 10vw;
         rotate: 190deg;
         animation: flashlightDrop 1.5s forwards;
@@ -64,15 +59,91 @@
             }
         }
 
-        p {
-            opacity: 0.6;
-            font-size: 1.5rem;
-            color: rgb(175, 175, 175);
+        .about-info {
+            @include styles.centerFlex;
+            flex-direction: column;
+            gap: 30px;
 
-            &.light-on {
-                text-shadow: rgb(220, 220, 220) 1px 0 10px;
-                color: white;
-                opacity: 1;
+            p {
+                opacity: 0.6;
+                font-size: 1.5rem;
+                color: rgb(175, 175, 175);
+
+                &.light-on {
+                    text-shadow: rgb(220, 220, 220) 1px 0 10px;
+                    color: white;
+                    opacity: 1;
+                }
+            }
+
+            .skills-container {
+                width: 100%;
+
+                h3 {
+                    @include styles.headerFont;
+                    font-size: 1.5rem;
+                    color: rgb(175, 175, 175);
+                    opacity: 0.6;
+                    margin-bottom: 20px;
+
+                    &.light-on {
+                        text-shadow: rgb(220, 220, 220) 1px 0 7px;
+                        color: white;
+                        opacity: 1;
+                    }
+                }
+
+                .skills {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 1.5rem;
+                    opacity: 0.6;
+                    color: rgb(175, 175, 175);
+                    overflow-y: scroll;
+                    height: 300px;
+                    border-radius: 10px;
+                    border: 2px solid white;
+                    padding: 10px 15px;
+
+                    &::-webkit-scrollbar {
+                        background-color: transparent;
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: white;
+                        border-radius: 100px;
+                    }
+
+                    &.light-on {
+                        text-shadow: rgb(220, 220, 220) 1px 0 7px;
+                        color: white;
+                        opacity: 1;
+                        -webkit-box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+                        -moz-box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+                        box-shadow: 0px 0px 23px -3px rgba(220, 220, 220, 1);
+                    }
+
+                    .skill {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        width: 100%;
+
+
+                        img {
+                            width: 40px;
+                            height: auto;
+                        }
+
+                        span {
+                            font-size: 1.5rem;
+                            font-weight: 800;
+                        }
+                    }
+                }
             }
         }
     }
@@ -98,21 +169,21 @@
     }
 
     to {
-        top: 5vh;
+        top: 1.5vh;
         rotate: 150deg;
     }
 }
 
 @keyframes float {
     0% {
-        top: 5vh;
+        top: 1.5vh;
     }
 
     50% {
-        top: 6vh;
+        top: 2.5vh;
     }
 
     100% {
-        top: 5vh;
+        top: 1.5vh;
     }
 }
