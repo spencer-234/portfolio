@@ -26,7 +26,7 @@ const Projects = () => {
         const leftView = 100 / lines.length;
         lines.forEach((line, i) => {
             line.style.left = `${(i + 0.3) * leftView}vw`;
-            line.style.height = `${Math.floor(Math.random() * (30 - 10 + 1)) + 10}vh`;
+            line.style.height = `${Math.floor(Math.random() * (25 - 10 + 1)) + 10}vh`;
         })
     }
 

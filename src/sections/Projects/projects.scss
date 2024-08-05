@@ -5,7 +5,7 @@
     position: relative;
     min-height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(to bottom, #00055B 0%, #00011c 90%);
+    background-image: linear-gradient(to bottom, #00055B 0%, #00011c 100%);
     overflow: hidden;
     padding: 15vh 10vw;
 
@@ -127,7 +127,7 @@
             height: auto;
 
             @media screen and (min-width: styles.$lg) {
-                width: 60px;
+                width: 50px;
             }
         }
 
