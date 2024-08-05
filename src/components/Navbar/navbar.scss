@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     z-index: 900;
-    background-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    background-image: linear-gradient(to bottom, black 70%, transparent 100%);
 
     nav {
         display: flex;
@@ -32,6 +32,17 @@
             width: 40px;
             height: 40px;
             cursor: pointer;
+
+            @media screen and (min-width: styles.$md) {
+                display: none;
+            }
+        }
+
+        a {
+            &:hover {
+                color: rgb(1, 255, 255);
+                text-shadow: rgb(0, 229, 255) 2px 0 10px;
+            }
         }
 
         .menu-open {
@@ -40,6 +51,43 @@
 
         .menu-close {
             animation: closeMenu 500ms forwards;
+        }
+
+        .desktop-links {
+            display: none;
+            gap: 40px;
+            margin-right: 20px;
+
+            @media screen and (min-width: styles.$md) {
+                display: flex;
+            }
+        }
+
+        .sidebar {
+            position: absolute;
+            right: 0;
+            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px 0;
+            top: 35px;
+            height: calc(100vh - 35px);
+            background-color: black;
+            width: 50%;
+            max-width: 400px;
+            font-size: 1.8rem;
+            animation: menuSlide 200ms forwards;
+
+            @media screen and (min-width: styles.$md) {
+                display: none;
+            }
+
+            a {
+                text-align: end;
+                width: 100%;
+                padding-bottom: 10px;
+                border-bottom: 2px solid gray;
+            }
         }
     }
 
@@ -60,6 +108,16 @@
 
         to {
             rotate: (0deg);
+        }
+    }
+
+    @keyframes menuSlide {
+        from {
+            right: -55%;
+        }
+
+        to {
+            right: 0;
         }
     }
 }
